@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --env-file=.env index.js",
-    "start": "node --env-file=.env index.js"
+    "dev": "npm i && nodemon --env-file=.env index.js",
+    "start": "npm i && node --env-file=.env index.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,8 @@
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "helmet": "^8.3.0",
-    "jsonwebtoken": "^9.0.3"
+    "jsonwebtoken": "^9.0.3",
+    "ldap-authentication": "^4.0.4",
+    "mysql2": "^3.23.3"
   }
 }

@@ -7,6 +7,8 @@ import { corsOptions } from "./config/corsConfig.js";
 import errorHandler from "./middlewares/errorHandler.js";
 
 import userRoutes from "./routes/userRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
+import validateRoutes from "./routes/validateRoutes.js";
 
 const app = express();
 
@@ -23,6 +25,8 @@ app.use((req, res, next) => {
 });
 
 app.use("/user/", userRoutes);
+app.use("/auth/", authRoutes);
+app.use('/validate', validateRoutes);
 app.use(errorHandler);
 
 export default app;
