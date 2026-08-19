@@ -30,7 +30,9 @@ export const validateEmails = async (req, res) => {
             const isValid = emailRegex.test(email) && result[0].count > 0;
             return { email, isValid };
         }));
-        res.status(200).json({ results: emailsValidationResults });
+        mysql_connection.release();
+        console.log('Email validation results:', emailsValidationResults);
+        return res.status(200).json({ results: emailsValidationResults });
         }catch(err){
             console.error('Error during email validation:', err);
             return res.status(500).json({
