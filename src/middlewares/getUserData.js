@@ -38,7 +38,7 @@ const getUserData = async (username) => {
             name_th: `${result.name_th || ''} ${result.mname_th || ''} ${result.lname_th || ''}`,
             name_en: `${result.name_en || ''} ${result.mname_en || ''} ${result.lname_en || ''}`,
             type: (role === 'StudentSwu' ? 'นิสิต' : 'บุคลากร'),
-            user_id: (role === 'StudentSwu' ? result.student_id : result.employee_id)
+            //user_id: (role === 'StudentSwu' ? result.student_id : result.employee_id)
         }
     }catch(e){
         console.error('Error fetching user data:', e);
