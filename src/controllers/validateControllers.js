@@ -1,6 +1,20 @@
 import { mysql_backend_jame_libswu } from "../config/db.js";
 
 export const validateEmails = async (req, res) => {
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader) {
+        return res.status(401).json({
+        message: "No token",
+        });
+    }
+
+    if(authHeader !== process.env.TOKEN_VALIDATE_EMAILS){
+        return res.status(401).json({
+            message: "Unauthorized: Invalid token"
+        });
+    }
+
     const { emails } = req.body;
     console.log('Received emails for validation:', emails);
     if (!emails || !Array.isArray(emails)) {

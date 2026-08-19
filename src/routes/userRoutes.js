@@ -6,6 +6,6 @@ import { validateToken } from "../middlewares/tokenValidation.js";
 
 const router = express.Router();
 
-router.get('/:username', getUserByUsername);
+//router.get('/:username', getUserByUsername);
 
 export default router;

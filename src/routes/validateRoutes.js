@@ -4,6 +4,6 @@ import { validateEmails } from "../controllers/validateControllers.js";
 
 const router = express.Router();
 
-router.post('/emails', validateToken, validateEmails);
+router.post('/emails', validateEmails);
 
 export default router;
